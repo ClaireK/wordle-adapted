@@ -1,0 +1,24 @@
+{
+    "golf": [
+        { "word": "swing" },
+        { "word": "divot" },
+        { "word": "bogey" },
+        { "word": "yards" },
+        { "word": "eagle" },
+        { "word": "irons" },
+        { "word": "woods" },
+        { "word": "rough" },
+        { "word": "holes" },
+        { "word": "slice" },
+        { "word": "beach" },
+        { "word": "cuban" },
+        { "word": "drive" },
+        { "word": "flyer" },
+        { "word": "gimme" },
+        { "word": "match" },
+        { "word": "nuked" },
+        { "word": "skull" },
+        { "word": "whiff" },
+        { "word": "quick" }
+    ]
+}
