@@ -43,19 +43,21 @@ function Game() {
     // Not a character, ENTER or DELETE? Do nothin!
     if(!singleCharCheck && !backspaceCheck && !enterCheck) {
       return
-    } else {
-      // Do somethin!
-      if (formattedKey === "BACKSPACE") {
-        handleDelete();
-      } else if (formattedKey === "ENTER") {
-        if(currentGuess.length === 5) {
-          handleSubmit();
-        }  
-      } else if (currentGuess.length < 5) {
-        let nextGuess = currentGuess;
-        setCurrentGuess(nextGuess += formattedKey);
-      }
-
+    } 
+    // Do somethin!
+    if (formattedKey === "BACKSPACE") {
+      return handleDelete();
+    }
+    if (formattedKey === "ENTER") {
+      if(currentGuess.length === 5) {
+        return handleSubmit();
+      } else {
+        return;
+      } 
+    }
+    if (currentGuess.length < 5) {
+      let nextGuess = currentGuess;
+      return setCurrentGuess(nextGuess += formattedKey);
     }
   }
 
@@ -75,9 +77,11 @@ function Game() {
     setCurrentGuess("");
 
     if (currentGuess === answerFormatted) {
-      setGameStatus("won");
-    } else if (nextGuessList.length >= 6) {
-      setGameStatus("lost");
+      return setGameStatus("won");
+    }
+
+    if (nextGuessList.length >= 6) {
+      return setGameStatus("lost");
     }
   }
 
