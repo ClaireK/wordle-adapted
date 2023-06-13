@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 
 function KeyboardBtn({ children, handleOnKeyboardClick, gameStatus }) {
     return (
@@ -12,4 +12,4 @@ function KeyboardBtn({ children, handleOnKeyboardClick, gameStatus }) {
 
 }
 
-export default KeyboardBtn;
+export default memo(KeyboardBtn);

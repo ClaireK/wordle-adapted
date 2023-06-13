@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import KeyboardRow from "./KeyboardRow";
 import keyboard from "../../../data/keyboard.json"
 
-function Keyboard({ handleOnKeyboardClick, guessStatusList, gameStatus }) {
+function Keyboard({ handleOnKeyboardClick, gameStatus }) {
 
   const [rowOne, setRowOne] = useState([]);
   const [rowTwo, setRowTwo] = useState([]);
@@ -43,20 +43,17 @@ function Keyboard({ handleOnKeyboardClick, guessStatusList, gameStatus }) {
       {
         <>
           <KeyboardRow 
-            guessStatus={guessStatusList} 
             keys={rowOne} 
             handleOnKeyboardClick={handleOnKeyboardClick}
             gameStatus={gameStatus} 
           />
           <KeyboardRow 
-            guessStatus={guessStatusList} 
             keys={rowTwo} 
             spacer={true} 
             handleOnKeyboardClick={handleOnKeyboardClick}
             gameStatus={gameStatus}  
           />
           <KeyboardRow 
-            guessStatus={guessStatusList} 
             keys={rowThree} 
             handleOnKeyboardClick={handleOnKeyboardClick} 
             gameStatus={gameStatus} 
@@ -67,4 +64,4 @@ function Keyboard({ handleOnKeyboardClick, guessStatusList, gameStatus }) {
   )
 }
 
-export default Keyboard;
+export default memo(Keyboard);

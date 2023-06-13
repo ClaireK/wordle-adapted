@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import KeyboardBtn from "./KeyboardBtn";
 
 function KeyboardRow({ keys, spacer = false, handleOnKeyboardClick, gameStatus }) {
@@ -24,4 +24,4 @@ function KeyboardRow({ keys, spacer = false, handleOnKeyboardClick, gameStatus }
 
 }
 
-export default KeyboardRow;
+export default memo(KeyboardRow);
